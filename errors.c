@@ -20,8 +20,12 @@ void push_error(short int err_code)
 		fprintf(stderr, "Error: Can't open file %s\n", data.filename);
 		break;
 	case 15:
-		fprintf(stderr, "L%d: unknown instruction %s\n", data.line_number, data.args[0]);
+		fprintf(stderr, "L%d: unknown instruction %s\n",
+			data.line_number, data.args[0]);
 		free_data();
+	case 16:
+		fprintf(stderr, "L<line_number>: usage: push integer\n", data.line_number);
+		break;
 	default:
 		break;
 	}

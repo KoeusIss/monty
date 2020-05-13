@@ -2,6 +2,8 @@
 data_t data;
 /**
  * main - main function
+ * @ac: arguments count
+ * @av: arguments vector
  *
  * Return: (Success) EXIT_SUCCESS
  * ------- (Fail) EXIT_FAILURE

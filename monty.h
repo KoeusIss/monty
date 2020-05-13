@@ -1,6 +1,5 @@
 #ifndef _MONTY_H
 #define _MONTY_H
-
 /* Libraries */
 #define _GNU_SOURCE
 #include <stdlib.h>
@@ -39,8 +38,11 @@ typedef struct instruction_s
  * struct data_instance - data instance
  * @line: the readed line
  * @args: the arguments
+ * @line_number: line number
+ * @fp: the file
+ * @filename: filename
  * Description: data instance, line, args
- * 
+ *
  */
 typedef struct instance_s
 {

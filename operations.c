@@ -1,19 +1,21 @@
 #include "monty.h"
 /**
  * add_dnodeint - adds a new node at the beginning of a linked list
- * @head: a pointer to the linked list
- * @n: a given integer of the new node
+ * @stack: a pointer to the linked list
+ * @line_number: the line number
  *
- * Return: (Success) a pointer to the newly add node
- * ------- (Fail) return a NULL
+ * Return: void
  */
-void add_dnodeint(stack_t **stack, unsigned int line_number __attribute__((unused)))
+void
+add_dnodeint(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *new_node;
 
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 		push_error(11);
+	if (isdigit(data.args[1]) == 0)
+		push_error(16);
 	new_node->n = atoi(data.args[1]);
 	if (*stack == NULL)
 	{
@@ -30,12 +32,14 @@ void add_dnodeint(stack_t **stack, unsigned int line_number __attribute__((unuse
 }
 /**
  * print_dlistint - prints all elements of a doubly list
- * @head: the pointer to the head
+ * @stack: the pointer to the head
+ * @line_number: the line number
  *
- * Return: (Success) a number of the nodes
- * ------- (Fail) return negative number
+ * Return: void
  */
-void print_dlistint(stack_t **stack, unsigned int line_number __attribute__((unused)))
+void
+print_dlistint(stack_t **stack,
+	unsigned int line_number __attribute__((unused)))
 {
 	stack_t *cursor;
 
