@@ -1,5 +1,5 @@
 #include "monty.h"
-
+data_t data;
 /**
  * main - main function
  *
@@ -8,28 +8,22 @@
  */
 int main(int ac, char **av)
 {
-	FILE *fp;
-	data_t data;
 	ssize_t n_read;
 	size_t length = 0;
+	stack_t *stack = NULL;
 
 	memset((void *) &data, 0, sizeof(data));
 	if (ac != 2)
+		push_error(12);
+	data.filename = av[1];
+	data.fp = fopen(data.filename, "r");
+	if (data.fp == NULL)
+		push_error(14);
+	while ((n_read = getline(&data.line, &length, data.fp)) > 0)
 	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
+		process_line(&stack);
+		data.line_number++;
 	}
-	fp = fopen(av[1], "r");
-	if (fp == NULL)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", av[1]);
-		exit(EXIT_FAILURE);
-	}
-	while ((n_read = getline(&data.line, &length, fp)) > 0)
-	{
-		process_line(&data);
-	}
-	free(data.line);
-	fclose(fp);
+	free_data();
 	return (EXIT_SUCCESS);
 }
