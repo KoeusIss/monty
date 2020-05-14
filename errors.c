@@ -31,6 +31,10 @@ void push_error(short int err_code)
 		fprintf(stderr, "L%d: can't pint, stack empty\n", data.line_number);
 		free_data();
 		break;
+	case 18:
+		fprintf(stderr, "L%d: can't pop an empty stack\n", data.line_number);
+		free_data();
+		break;
 	default:
 		break;
 	}
