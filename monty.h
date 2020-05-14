@@ -72,4 +72,5 @@ void pop_top(stack_t **stack, unsigned int line_number);
 void swap_top(stack_t **stack, unsigned int line_number);
 int _isdigit(char *str);
 void nothing(stack_t **stack, unsigned int line_number);
+void add_top_two(stack_t **stack, unsigned int line_number);
 #endif /* _MONTY_H */

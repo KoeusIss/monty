@@ -1,11 +1,12 @@
 #include "monty.h"
+
 /**
- * push_error - pushs errors
+ * get_error_1 - gets error
  * @err_code: error code
  *
  * Return: void
  */
-void push_error(short int err_code)
+void get_error_1(short int err_code)
 {
 	switch (err_code)
 	{
@@ -43,5 +44,36 @@ void push_error(short int err_code)
 	default:
 		break;
 	}
+}
+/**
+ * get_error_2 - gets error
+ * @err_code: error code
+ *
+ * Return: void
+ */
+void get_error_2(short int err_code)
+{
+	switch (err_code)
+	{
+	case 20:
+		fprintf(stderr, "L%d: can't add, stack too short\n", data.line_number);
+		free_data();
+		break;
+	default:
+		break;
+	}
+}
+/**
+ * push_error - pushs errors
+ * @err_code: error code
+ *
+ * Return: void
+ */
+void push_error(short int err_code)
+{
+	if (err_code >= 10 && err_code < 20)
+		get_error_1(err_code);
+	else if (err_code >= 20 && err_code < 30)
+		get_error_2(err_code);
 	exit(EXIT_FAILURE);
 }

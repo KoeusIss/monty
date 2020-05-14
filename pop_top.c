@@ -22,5 +22,5 @@ void pop_top(stack_t **stack,
 	tmp = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
-	free(tmp);	
+	free(tmp);
 }
