@@ -9,6 +9,18 @@
 void pop_top(stack_t **stack,
 	unsigned int line_number __attribute__((unused)))
 {
+	stack_t *tmp;
+
 	if (*stack == NULL)
-		push_error(17);
+		push_error(18);
+	if ((*stack)->next == NULL)
+	{
+		free(*stack);
+		*stack = NULL;
+		return;
+	}
+	tmp = *stack;
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
+	free(tmp);	
 }
