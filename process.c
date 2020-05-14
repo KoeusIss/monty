@@ -18,6 +18,7 @@ int process_line(stack_t **stack)
 		{"sub", sub_top_two},
 		{"div", div_top_two},
 		{"mul", mul_top_two},
+		{"mod", mod_top_two},
 		{NULL, NULL}
 	};
 	int i = 0;
