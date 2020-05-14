@@ -39,11 +39,11 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size == 0 && ptr)
 	{
 		free(ptr);
-		return (NULL);
+		push_error(11);
 	}
 	result = malloc(new_size);
 	if (result == NULL)
-		return (NULL);
+		push_error(11);
 	if (ptr == NULL)
 	{
 		fill_an_array(result, '\0', new_size);

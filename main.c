@@ -31,6 +31,7 @@ int main(int ac, char **av)
 		if (*data.line == '#' || *data.line == '\n')
 			continue;
 		data.line_number++;
+		free(data.args);
 		split_line();
 		if (*data.args == NULL)
 			continue;

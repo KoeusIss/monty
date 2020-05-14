@@ -17,7 +17,7 @@ int process_line(stack_t **stack)
 
 	while ((inst + i)->opcode)
 	{
-		if (strcmp((inst + i)->opcode, data.args[0]) == 0)
+		if (strcmp((inst + i)->opcode, *data.args) == 0)
 		{
 			(inst + i)->f(stack, data.line_number);
 			return (0);

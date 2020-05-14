@@ -7,7 +7,8 @@
  * Return: void
  */
 void
-add_dnodeint(stack_t **stack, unsigned int line_number __attribute__((unused)))
+add_dnodeint(stack_t **stack,
+	unsigned int line_number __attribute__((unused)))
 {
 	stack_t *new_node;
 
