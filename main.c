@@ -28,8 +28,12 @@ int main(int ac, char **av)
 		push_error(14);
 	while ((n_read = getline(&data.line, &length, data.fp)) > 0)
 	{
+		if (*data.line == '#' || *data.line == '\n')
+			continue;
 		data.line_number++;
 		split_line();
+		if (*data.args == NULL)
+			continue;
 		process_line(&stack);
 	}
 	free_data();

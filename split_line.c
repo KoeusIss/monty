@@ -1,6 +1,6 @@
 #include "monty.h"
 
-#define DELIMITER " \n\t"
+#define DELIMITER " \n\t\a"
 /**
  * split_line - splits line to tokens
  *
