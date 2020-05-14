@@ -10,6 +10,7 @@ int process_line(stack_t **stack)
 	instruction_t inst[] = {
 		{"push", add_dnodeint},
 		{"pall", print_dlistint},
+		{"pint", print_reverse},
 		{NULL, NULL}
 	};
 	int i = 0;

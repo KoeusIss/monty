@@ -50,3 +50,26 @@ print_dlistint(stack_t **stack,
 		cursor = cursor->next;
 	}
 }
+/**
+ * print_reverse - prints from bottom to top
+ * @stack: the pointer to the head
+ * @line_number: the line number
+ *
+ * Return: void
+ */
+void print_reverse(stack_t **stack,
+	unsigned int line_number __attribute__((unused)))
+{
+	stack_t *cursor;
+
+	if (*stack == NULL)
+		push_error(17);
+	cursor = *stack;
+	while (cursor->next)
+		cursor = cursor->next;
+	while (cursor)
+	{
+		fprintf(stdout, "%d\n", cursor->n);
+		cursor = cursor->prev;
+	}
+}

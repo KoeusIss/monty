@@ -27,6 +27,10 @@ void push_error(short int err_code)
 	case 16:
 		fprintf(stderr, "L%d: usage: push integer\n", data.line_number);
 		break;
+	case 17:
+		fprintf(stderr, "L%d: can't pint, stack empty\n", data.line_number);
+		free_data();
+		break;
 	default:
 		break;
 	}

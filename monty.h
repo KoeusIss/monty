@@ -68,4 +68,5 @@ void free_data(void);
 void print_dlistint(stack_t **stack, unsigned int line_number);
 void free_dlistint(stack_t *stack);
 int split_line(data_t *data);
+void print_reverse(stack_t **stack, unsigned int line_number);
 #endif /* _MONTY_H */
