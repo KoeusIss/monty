@@ -57,19 +57,10 @@ print_dlistint(stack_t **stack,
  *
  * Return: void
  */
-void print_reverse(stack_t **stack,
+void print_top(stack_t **stack,
 	unsigned int line_number __attribute__((unused)))
 {
-	stack_t *cursor;
-
 	if (*stack == NULL)
 		push_error(17);
-	cursor = *stack;
-	while (cursor->next)
-		cursor = cursor->next;
-	while (cursor)
-	{
-		fprintf(stdout, "%d\n", cursor->n);
-		cursor = cursor->prev;
-	}
+	fprintf(stdout, "%d\n", (*stack)->n);
 }
