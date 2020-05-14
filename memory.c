@@ -21,6 +21,7 @@ void *fill_an_array(void *a, int el, unsigned int len)
 	}
 	return (a);
 }
+
 /**
  * _realloc - reallocates memory block
  * @ptr: pointer to the previous memory
@@ -31,12 +32,8 @@ void *fill_an_array(void *a, int el, unsigned int len)
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	/* Declaration */
 	void *result;
-	unsigned int i;
-	char *p;
 
-	/* Checks the size */
 	if (new_size == old_size)
 		return (ptr);
 	if (new_size == 0 && ptr)
@@ -54,14 +51,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	else
 	{
-		i = 0;
-		p = ptr;
-		while (i < old_size)
-		{
-			fill_an_array(result, *p, old_size);
-			p++;
-			i++;
-		}
+		memcpy(result, ptr, old_size);
 		free(ptr);
 	}
 	return (result);

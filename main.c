@@ -26,7 +26,6 @@ int main(int ac, char **av)
 		data.line_number++;
 		split_line(&data);
 		process_line(&stack);
-		free(data.args);
 	}
 	free_data();
 	free_dlistint(stack);
