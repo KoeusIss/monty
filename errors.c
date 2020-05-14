@@ -23,8 +23,9 @@ void push_error(short int err_code)
 		fprintf(stderr, "L%d: unknown instruction %s\n",
 			data.line_number, data.args[0]);
 		free_data();
+		break;
 	case 16:
-		fprintf(stderr, "L<line_number>: usage: push integer\n", data.line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", data.line_number);
 		break;
 	default:
 		break;

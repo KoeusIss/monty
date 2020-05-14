@@ -2,6 +2,7 @@
 #define _MONTY_H
 /* Libraries */
 #define _GNU_SOURCE
+#include <ctype.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>

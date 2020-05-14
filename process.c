@@ -1,15 +1,21 @@
 #include "monty.h"
-
+/**
+ * process_line - process and parse line
+ * @stack: the stack
+ *
+ * Return: integer
+ */
 int process_line(stack_t **stack)
 {
 	instruction_t inst[] = {
 		{"push", add_dnodeint},
-		{"pall", print_dlistint}
+		{"pall", print_dlistint},
+		{NULL, NULL}
 	};
 	char *token;
-	int i = 0, new_size, size = 2;
+	int i = 0;
 
-	data.args = malloc(size * sizeof(char **));
+	data.args = malloc(2 * sizeof(char **));
 	if (data.args == NULL)
 		push_error(11);
 	token = strtok(data.line, " \n");
@@ -17,14 +23,16 @@ int process_line(stack_t **stack)
 	{
 		data.args[i++] = token;
 		token = strtok(NULL, " \n");
+		/*
 		if (i > size)
 		{
 			new_size = size * 2;
-			data.args = _realloc(data.args, size, new_size);
+			data.args = realloc(data.args, new_size);
 			if (data.args == NULL)
 				push_error(11);
 			size = new_size;
 		}
+		*/
 	}
 	i = 0;
 	while ((inst + i)->opcode)
