@@ -14,7 +14,7 @@ int main(int ac, char **av)
 	size_t length = 0;
 	stack_t *stack = NULL;
 
-	memset((void *)&data, 0, sizeof(data));
+	data.line = NULL;
 	if (ac != 2)
 		push_error(12);
 	data.filename = av[1];

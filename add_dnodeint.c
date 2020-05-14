@@ -14,7 +14,7 @@ add_dnodeint(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 		push_error(11);
-	if (isdigit(*(data.args)[1]) == 0)
+	if (_isdigit(data.args[1]) > 0)
 		push_error(16);
 	new_node->n = atoi(data.args[1]);
 	if (*stack == NULL)

@@ -24,7 +24,6 @@ int process_line(stack_t **stack)
 		}
 		i++;
 	}
-	if ((inst + i)->opcode == NULL)
-		push_error(15);
+	push_error(15);
 	return (0);
 }

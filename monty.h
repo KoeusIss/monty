@@ -69,4 +69,5 @@ void print_dlistint(stack_t **stack, unsigned int line_number);
 void free_dlistint(stack_t *stack);
 int split_line(data_t *data);
 void print_top(stack_t **stack, unsigned int line_number);
+int _isdigit(char *str);
 #endif /* _MONTY_H */
