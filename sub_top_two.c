@@ -16,9 +16,8 @@ void sub_top_two(stack_t **stack, unsigned int line_number)
 		push_error(21);
 		return;
 	}
-	tmp = *stack;
-	tmp->next->n -= tmp->n;
-	tmp->next->prev = NULL;
-	*stack = tmp->next;
+	tmp->next->n -= (*stack)->n;
+	*stack = (*stack)->next;
 	free(tmp);
+	(*stack)->prev = NULL;
 }
