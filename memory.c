@@ -79,7 +79,7 @@ void free_data(void)
 }
 /**
  * free_dlistint - frees a linked list
- * @head: a pointer to the linked list
+ * @stack: a pointer to the linked list
  *
  * Return: void
  */

@@ -1,5 +1,6 @@
 #ifndef _MONTY_H
 #define _MONTY_H
+
 /* Libraries */
 #define _GNU_SOURCE
 #include <ctype.h>
@@ -7,6 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -18,10 +20,11 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stacks *next;
 } stack_t;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -32,11 +35,12 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
 /**
- * struct data_instance - data instance
+ * struct instance_s - data instance
  * @line: the readed line
  * @args: the arguments
  * @line_number: line number
@@ -49,8 +53,8 @@ typedef struct instance_s
 	int line_number;
 	char *line;
 	char **args;
-        FILE *fp;
-        char *filename;
+	FILE *fp;
+	char *filename;
 } data_t;
 
 extern data_t data;
