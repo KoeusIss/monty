@@ -11,5 +11,4 @@ void pop_top(stack_t **stack,
 {
 	if (*stack == NULL)
 		push_error(17);
-		
 }

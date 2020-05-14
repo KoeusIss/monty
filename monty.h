@@ -50,11 +50,11 @@ typedef struct instruction_s
  */
 typedef struct instance_s
 {
-	int line_number;
 	char *line;
 	char **args;
-	FILE *fp;
 	char *filename;
+	int line_number;
+	FILE *fp;
 } data_t;
 
 extern data_t data;
@@ -67,7 +67,7 @@ void push_error(short int err_code);
 void free_data(void);
 void print_dlistint(stack_t **stack, unsigned int line_number);
 void free_dlistint(stack_t *stack);
-int split_line(data_t *data);
+int split_line(void);
 void print_top(stack_t **stack, unsigned int line_number);
 int _isdigit(char *str);
 #endif /* _MONTY_H */

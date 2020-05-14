@@ -75,12 +75,12 @@ void free_data(void)
  */
 void free_dlistint(stack_t *stack)
 {
-	stack_t *cursor;
+	stack_t *current;
 
 	while (stack)
 	{
-		cursor = stack;
+		current = stack;
 		stack = stack->next;
-		free(cursor);
+		free(current);
 	}
 }
