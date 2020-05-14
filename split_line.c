@@ -31,6 +31,8 @@ int split_line(void)
 		token = strtok(NULL, DELIMITER);
 	}
 	data.args[i] = NULL;
+	if (**data.args == '#')
+		return (-1);
 	return (0);
 }
 #undef DELIMITER
