@@ -59,6 +59,10 @@ void get_error_2(short int err_code)
 		fprintf(stderr, "L%d: can't add, stack too short\n", data.line_number);
 		free_data();
 		break;
+	case 21:
+		fprintf(stderr, "L%d: can't sub, stack too short", data.line_number);
+		free_data();
+		break;
 	default:
 		break;
 	}

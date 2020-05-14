@@ -15,6 +15,7 @@ int process_line(stack_t **stack)
 		{"swap", swap_top},
 		{"nop", nothing},
 		{"add", add_top_two},
+		{"sub", sub_top_two},
 		{NULL, NULL}
 	};
 	int i = 0;
