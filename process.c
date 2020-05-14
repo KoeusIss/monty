@@ -12,6 +12,7 @@ int process_line(stack_t **stack)
 		{"pall", print_dlistint},
 		{"pint", print_top},
 		{"pop", pop_top},
+		{"swap", swap_top},
 		{NULL, NULL}
 	};
 	int i = 0;
