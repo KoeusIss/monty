@@ -14,7 +14,7 @@ int main(int ac, char **av)
 	size_t length = 0;
 	stack_t *stack = NULL;
 
-	memset((void *) &data, 0, sizeof(data));
+	memset((void *)&data, 0, sizeof(data));
 	if (ac != 2)
 		push_error(12);
 	data.filename = av[1];
@@ -23,9 +23,12 @@ int main(int ac, char **av)
 		push_error(14);
 	while ((n_read = getline(&data.line, &length, data.fp)) > 0)
 	{
-		process_line(&stack);
 		data.line_number++;
+		split_line(&data);
+		process_line(&stack);
+		free(data.args);
 	}
 	free_data();
+	free_dlistint(stack);
 	return (EXIT_SUCCESS);
 }

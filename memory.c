@@ -77,3 +77,20 @@ void free_data(void)
 	data.args = NULL;
 	fclose(data.fp);
 }
+/**
+ * free_dlistint - frees a linked list
+ * @head: a pointer to the linked list
+ *
+ * Return: void
+ */
+void free_dlistint(stack_t *stack)
+{
+	stack_t *cursor;
+
+	while (stack)
+	{
+		cursor = stack;
+		stack = stack->next;
+		free(cursor);
+	}
+}

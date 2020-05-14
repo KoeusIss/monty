@@ -43,7 +43,6 @@ typedef struct instruction_s
  * @fp: the file
  * @filename: filename
  * Description: data instance, line, args
- *
  */
 typedef struct instance_s
 {
@@ -63,4 +62,6 @@ void add_dnodeint(stack_t **stack, unsigned int line_number);
 void push_error(short int err_code);
 void free_data(void);
 void print_dlistint(stack_t **stack, unsigned int line_number);
+void free_dlistint(stack_t *stack);
+int split_line(data_t *data);
 #endif /* _MONTY_H */
